@@ -1,0 +1,138 @@
+.full-nav-trigger {
+    display: block;
+    height: 80px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    right: 3%;
+    top: 0;
+    width: 80px;
+}
+
+.full-nav-trigger span {
+    background: #000;
+    display: block;
+    height: 3px;
+    left: 50%;
+    margin-right: 15px;
+    position: absolute;
+    top: 50%;
+    transition: all 0.2s ease-in-out;
+    transform: translate(-50%, -50%);
+    width: 28px;
+}
+
+.full-nav-trigger span:before {
+    background: #000;
+    content: '';
+    height: 3px;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    width: 50px;
+    top: -14px;
+}
+
+.full-nav-trigger span:after {
+    background: #000;
+    content: '';
+    height: 3px;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    width: 50px;
+    top: 14px;
+    width: 42px;
+}
+
+/*active*/
+.active span {
+    background: transparent;
+}
+
+.active span:before {
+    transform: rotate(45deg) translate(10px, 10px);
+    background: #000;
+}
+
+.active span:after {
+    transform: rotate(-45deg) translate(10px, -10px);
+    width: 50px;
+    background: #000;
+}
+
+.full-nav-close {
+    visibility: hidden;
+}
+
+.full-nav-open #full-nav {
+    visibility: visible;
+    animation: fadein 0.7s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#full-nav {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.full-nav-open #full-nav:after {
+    opacity: 1;
+    top: -50vh;
+    right: -25vw;
+    transition: all 0.7s ease-in-out 0s;
+}
+
+#full-nav:after {
+    background-color: red;
+    content: '';
+    position: fixed;
+    opacity: 1;
+    height: 200vh;
+    top: -200vh;
+    right: -200vw;
+    width: 200vw;
+    border-radius: 100%;
+    transition: all 0.7s ease-in-out 0s;
+}
+
+.menu-full-nav-container {
+    position: relative;
+    z-index: 200;
+    margin-top: 115px;
+}
+
+.menu-full-nav-container ul {
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu-full-nav-container li {
+    margin-bottom: 20px;
+}
+
+.menu-full-nav-container a {
+    font-family: 'berlin';
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.menu>li {
+    animation: fadeInLeft 0.4s forwards;
+}
